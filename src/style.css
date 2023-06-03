@@ -1,0 +1,79 @@
+*{
+    font-family: 'Lato', sans-serif;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+  }
+
+  .point {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    margin-left: 5px;
+  }
+
+.score-tmp{
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+body {
+    margin: auto;
+    padding: 10px;
+    
+    height: 629px;
+    width: 100%;
+
+
+    background: url(../images/bg-bois.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-red{
+    background-color:rgb(208, 65, 65);
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding: 20px;
+}
+.bg-li {
+
+    background-image: url(../images/fueiile\ plier.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+
+header {
+	text-shadow: 0px 0px 4px rgba(151, 18, 18, 0.7);
+	color: #232323;
+	font-size: 15px;
+}
+.red {
+    color: rgb(208, 65, 65);
+}
+
+.btn {
+    display: flex;
+    flex-wrap: nowrap;
+
+    text-shadow: 0px 0px 4px rgba(151, 18, 18, 0.7);
+	color: #232323;
+	font-size: 15px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    margin-top: 25px;
+}
+
+h3{
+    font-size: 15px;
+}
+
