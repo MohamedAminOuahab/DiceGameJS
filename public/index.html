@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,74 +20,137 @@
     <!-- CSS --> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="../src/style.css">
-   <!-- fond du text -->
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <!-- fond du text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
     <title>DiceGame - un jeux de des pour s'amuser </title>
 </head>
 <body>
-    <div class="bg-li">
-        <header>
-            <div class="btn">
-                <svg role="button" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle mt-2 red" viewBox="0 0 16 16">
+    <!-- Contenu de la page avec la structure HTML et les classes Bootstrap -->
+    <div class="container-fluid">
+        <div class="container bg-papier">
+
+            <header class="text-center">
+                <svg role="button" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle new-game-btn text-danger" viewBox="0 0 16 16">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                 </svg>
-                <p>NEW GAME</p>
-            </div>
-        </header>
-        
-        <main>
-            <section class="d-flex justify-content-evenly">
-                <h2>PLAYER 1 <span class="point"></span></h2>
-                <div></div>
-                <h2>PLAYER 2 <span class="point"></span></h2>
-            </section>
-            <section class="d-flex justify-content-evenly">
-                <p class="score-tmp">0</p>
-                <div>
-                    <img src="../images/Dice-4.png" alt="des" width="50" height="50">
-                </div>
-                <p class="score-tmp">0</p>
-            </section>
-            <section class="d-flex justify-content-evenly  ">
-                <div class="text-center bg-red">
-                    <h3>CURRENT</h3>
-                    <p>0</p>
-                </div>
 
-                <div>
-                    <div class="btn">
-                        <svg role="button" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat red" viewBox="0 0 16 16">
-                            <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-                            <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-                          </svg>
-                        <p>ROLL DICE</p>
+                <span>NEW GAME</span>
+            </header>
+
+            <main>
+                <section>
+                    <div class="row justify-content-center align-items-center g-2">
+                        <div class="col-4 text-center player1-panel">
+                            <h2 id="player1-name">Player 1</h2>
+                        </div>
+            
+                        <div class="col-4"></div>
+            
+                        <div class="col-4 text-center player2-panel">
+                            <h2 id="player2-name">Player 2</h2>
+                        </div>
                     </div>
-                    
-                    <div class="btn">
-                        <svg role="button" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-down red" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
-                            <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-                        </svg>
-                        <p>HOLD</p>
+            
+                    <!-- score final player 1 -->
+                    <div class="row justify-content-center align-items-center g-2">
+                        <div class="col-4 text-center">
+                            <h3><span id="totalScore1">0</span></h3>
+                        </div>
+            
+                        <div class="col-4">
+                            <img src="../images/dice-1.jpg" alt="des" class="dice-img" width="38" height="38" >
+                        </div>
+            
+                        <!-- score final player 2 -->
+                        <div class="col-4 text-center">
+                            <h3><span id="totalScore2">0</span></h3>
+                        </div>
                     </div>
-                </div>
+            
+                    <div class="row justify-content-center align-items-center g-2">
+            
+                        <!-- score temporaire player 1 -->
+                        <div class="col-4 text-center">
+                            <div class="bg-danger p-2 rounded-3">
+                                <h4>current</h4>
+                                <h5><span id="temporaryScore1">0</span></h5>
+                            </div>
+                        </div>
+            
+                        <div class="col-4 p-2">
+            
+                            <!-- lance le des  -->
+                            <div>
+                                <svg role="button" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat text-danger roll-dice-btn" viewBox="0 0 16 16">
+                                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                                    <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                                </svg>
+                                <span>ROLL DICE</span>
+                            </div>
+            
+                            <!-- btn envoie le scor du round dans le score final -->
+                            <div>
+                                <svg role="button" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-down text-danger hold-btn" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
+                                    <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                </svg>
+                                <span>HOLD</span>
+                            </div>
+                        </div>
+            
+                        <!-- score temporaire player 2 -->
+                        <div class="col-4 p-2 text-center ">
+                            <div class="bg-danger p-2 rounded-3">
+                                <h4>current</h4>
+                                <h5><span id="temporaryScore2">0</span></h5>
+                            </div>
+                        </div>
+            
+                    </div>
+                </section>
+                <section class="bg-light">
+                    <div class="container">
+                        <h2>Règles</h2>
+                        <div class="row justify-content-center align-items-center g-1">
+                            <div class="col-12">
+                                <p>
+                                    Le jeu comprend 2 joueurs sur un seul et même écran.
+                                    Chaque joueur possède un score temporaire (ROUND) et un score global (GLOBAL).
+                                    À chaque tour, le joueur a son ROUND initialisé à 0 et peut lancer un dé autant de fois qu'il le souhaite. Le
+                                    résultat d’un lancer est ajouté au ROUND.
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <p>
+                                    Cliquer sur l’option “Hold”, qui permet d’envoyer les points du ROUND vers le GLOBAL. Ce sera alors le
+                                    tour de l’autre joueur.
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <p>
+                                    Si le joueur obtient un 1, son score ROUND est perdu et c’est la fin de son tour.
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <p>
+                                    Le premier joueur qui atteint 100 points dans le score global remporte le jeu.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
 
-                <div class="text-center bg-red">
-                    <h3>CURRENT</h3>
-                    <p>0</p>
-                </div>
-            </section>
-        </main>
-        
-        <footer>
-
-        </footer>
+        </div>
     </div>
+
+    <!-- JavaScript -->
     <script src="../src/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
 </body>
-</html> 
+</html>
+
