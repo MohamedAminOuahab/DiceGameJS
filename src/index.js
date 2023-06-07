@@ -70,7 +70,7 @@ function rollDice() {
 
     // Afficher l'image correspondante au dé
     const diceImage = document.querySelector('.dice-img');
-    diceImage.src = `../images/dice-${dice}.jpg`;
+    diceImage.src = `images/dice-${dice}.jpg`;
     diceImage.classList.remove('hidden'); // Afficher l'image du dé
 
     // Mettre à jour le score courant du joueur actif
@@ -124,7 +124,3 @@ newGameBtn.addEventListener('click', newGame);
 
 // Initialiser le jeu au chargement de la page
 init();
-
-
-
-  
